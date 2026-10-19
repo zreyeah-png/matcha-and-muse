@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Matcha & Muse — Artisanal Tea & Book Parlor</title>
+  <meta name="description" content="An artisanal Japanese tea bar and indie reading room pairing handcrafted single-origin brews with timeless literary works.">
+
+  <!-- Google Fonts: Playfair Display (Editorial Serif) & Plus Jakarta Sans (Clean Modern Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-mark">🍵</span>
+        <span class="logo-text">Matcha <em>&</em> Muse</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-links" id="navLinks">
+        <a href="#concept">Our Philosophy</a>
+        <a href="#pairings">Curated Pairings</a>
+        <a href="#generator">Pairing Engine</a>
+        <a href="#parlor">Visit Us</a>
+        <a href="#visit" class="nav-btn">Reserve a Nook</a>
+      </nav>
+
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <span class="badge">Artisanal Tea Bar & Reading Room</span>
+        <h1 class="hero-title">Where Ceremonial Tea Meets <em>Timeless Literature</em></h1>
+        <p class="hero-description">
+          Slow down. Disconnect from the digital noise. Savor single-origin Uji matcha and rare botanical blends paired thoughtfully with classic and contemporary books.
+        </p>
+        <div class="hero-actions">
+          <a href="#generator" class="btn btn-primary">Find Your Pairing ✨</a>
+          <a href="#pairings" class="btn btn-secondary">Explore Menu</a>
+        </div>
+      </div>
+      <div class="hero-card-preview">
+        <div class="spotlight-card">
+          <div class="spotlight-tag">Today's Featured Pairing</div>
+          <div class="spotlight-visual">
+            <span class="emoji-art">🍵 📖</span>
+          </div>
+          <h3>Ceremonial Uji Matcha</h3>
+          <p class="paired-with">Paired with <em>Kafka on the Shore</em> by Haruki Murakami</p>
+          <div class="flavor-pills">
+            <span>Umami</span>
+            <span>Velvety</span>
+            <span>Surrealist</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concept / Philosophy Section -->
+    <section class="section concept" id="concept">
+      <div class="container">
+        <div class="section-header">
+          <span class="subheading">The Philosophy</span>
+          <h2 class="section-title">The Art of Mindful Reading</h2>
+          <p class="section-lead">
+            Every page has a rhythm, and every tea has a cadence. We believe reading is best experienced through all five senses.
+          </p>
+        </div>
+
+        <div class="concept-grid">
+          <div class="concept-card">
+            <div class="concept-icon">🌱</div>
+            <h3>Single-Origin Harvests</h3>
+            <p>Direct-trade ceremonial matcha and loose-leaf cultivars sourced straight from family-run farms in Uji, Kyoto and Shizuoka.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">📚</div>
+            <h3>Curated Indie Library</h3>
+            <p>Over 1,200 literary works hand-selected by writers, poets, and historians—free to borrow and read during your visit.</p>
+          </div>
+          <div class="concept-card">
+            <div class="concept-icon">⏳</div>
+            <h3>Quiet Reading Nooks</h3>
+            <p>No ringing phones, no loud meetings. Just ambient acoustics, natural timber tables, and warm reading lamps designed for deep focus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Pairing Generator Section -->
+    <section class="section generator-section" id="generator">
+      <div class="container">
+        <div class="section-header">
+          <span class="subheading">Interactive Sommelier</span>
+          <h2 class="section-title">Match Your Reading Mood</h2>
+          <p class="section-lead">
+            Select your current reading vibe or genre below, and let our sommelier engine recommend the perfect handcrafted tea blend.
+          </p>
+        </div>
+
+        <!-- Filter Buttons (JavaScript Powered) -->
+        <div class="mood-selector" id="moodSelector">
+          <button class="mood-btn active" data-genre="mystery">🔍 Mystery & Noir</button>
+          <button class="mood-btn" data-genre="classics">📜 Classic Literature</button>
+          <button class="mood-btn" data-genre="scifi">🚀 Sci-Fi & Speculative</button>
+          <button class="mood-btn" data-genre="poetry">🌸 Poetry & Essays</button>
+          <button class="mood-btn" data-genre="fantasy">🏰 High Fantasy</button>
+        </div>
+
+        <!-- Dynamic Output Display Box -->
+        <div class="pairing-result-card" id="pairingResultCard">
+          <!-- Populated dynamically via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Pairings Carousel Section -->
+    <section class="section pairings-section" id="pairings">
+      <div class="container">
+        <div class="section-header">
+          <span class="subheading">House Signatures</span>
+          <h2 class="section-title">Curated Book & Tea Duos</h2>
+          <p class="section-lead">Explore our rotating seasonal pairings, crafted for afternoon escapes.</p>
+        </div>
+
+        <!-- Interactive Carousel Container -->
+        <div class="carousel-wrapper">
+          <button class="carousel-nav-btn prev-btn" id="prevBtn" aria-label="Previous Pairing">‹</button>
+          
+          <div class="carousel-track-container">
+            <div class="carousel-track" id="carouselTrack">
+              
+              <!-- Slide 1 -->
+              <div class="carousel-slide current-slide">
+                <div class="duo-card">
+                  <div class="duo-badge">Kyoto Blend</div>
+                  <div class="duo-icon">🍵</div>
+                  <h3 class="duo-title">First Harvest Ceremonial Matcha</h3>
+                  <div class="duo-divider">paired with</div>
+                  <h4 class="duo-book">"Norwegian Wood"</h4>
+                  <p class="duo-author">by Haruki Murakami</p>
+                  <p class="duo-notes">Rich umami and creamy vegetal sweetness balance Murakami's melancholic, reflective Tokyo prose.</p>
+                  <div class="duo-meta">
+                    <span>Temp: 80°C</span>
+                    <span>Whisk: Bamboo Chasen</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-slide">
+                <div class="duo-card">
+                  <div class="duo-badge">Smoked Herbal</div>
+                  <div class="duo-icon">🫖</div>
+                  <h3 class="duo-title">Lapsang Souchong & Bergamot</h3>
+                  <div class="duo-divider">paired with</div>
+                  <h4 class="duo-book">"The Hound of the Baskervilles"</h4>
+                  <p class="duo-author">by Arthur Conan Doyle</p>
+                  <p class="duo-notes">Peaty pine-smoke notes and citrus oil immerse your palate straight into the fog-drenched Dartmoor moors.</p>
+                  <div class="duo-meta">
+                    <span>Temp: 95°C</span>
+                    <span>Steep: 4 mins</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-slide">
+                <div class="duo-card">
+                  <div class="duo-badge">Floral Botanical</div>
+                  <div class="duo-icon">🌸</div>
+                  <h3 class="duo-title">Wild White Peony & Jasmine</h3>
+                  <div class="duo-divider">paired with</div>
+                  <h4 class="duo-book">"Pride and Prejudice"</h4>
+                  <p class="duo-author">by Jane Austen</p>
+                  <p class="duo-notes">Delicate, floral honey undertones accompany Austen's sharp wit and vibrant 19th-century countryside romance.</p>
+                  <div class="duo-meta">
+                    <span>Temp: 85°C</span>
+                    <span>Steep: 3 mins</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-slide">
+                <div class="duo-card">
+                  <div class="duo-badge">Warm Spice</div>
+                  <div class="duo-icon">🍂</div>
+                  <h3 class="duo-title">Spiced Cardamom Hojicha</h3>
+                  <div class="duo-divider">paired with</div>
+                  <h4 class="duo-book">"The Hobbit"</h4>
+                  <p class="duo-author">by J.R.R. Tolkien</p>
+                  <p class="duo-notes">Roasted green tea leaves infused with cinnamon and green cardamom invoke the warmth of a hearth in the Shire.</p>
+                  <div class="duo-meta">
+                    <span>Temp: 90°C</span>
+                    <span>Steep: 3 mins</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <button class="carousel-nav-btn next-btn" id="nextBtn" aria-label="Next Pairing">›</button>
+        </div>
+
+        <!-- Carousel Indicators (Dots) -->
+        <div class="carousel-indicators" id="carouselIndicators">
+          <span class="indicator-dot active" data-index="0"></span>
+          <span class="indicator-dot" data-index="1"></span>
+          <span class="indicator-dot" data-index="2"></span>
+          <span class="indicator-dot" data-index="3"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit / Parlor Reservation Section -->
+    <section class="section parlor-section" id="parlor">
+      <div class="container">
+        <div class="parlor-grid">
+          <div class="parlor-info">
+            <span class="subheading">Sanctuary Awaits</span>
+            <h2 class="section-title">Visit Our Tea Room</h2>
+            <p class="parlor-desc">
+              Nestled between bookstalls, our reading parlor welcomes quiet wanderers, solo readers, and slow-living enthusiasts.
+            </p>
+            
+            <div class="info-items">
+              <div class="info-item">
+                <span class="item-icon">📍</span>
+                <div>
+                  <strong>Location</strong>
+                  <p>42 Cedar Lane, Heritage Quarter</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="item-icon">🕐</span>
+                <div>
+                  <strong>Hours</strong>
+                  <p>Tuesday – Sunday: 8:00 AM – 9:00 PM</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="item-icon">🤫</span>
+                <div>
+                  <strong>Quiet Hours Policy</strong>
+                  <p>Whisper tones encouraged. Laptops permitted in the Garden Annex only.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="parlor-form-box" id="visit">
+            <h3>Reserve a Reading Nook</h3>
+            <p class="form-subtext">Guarantee a cozy corner table and your welcome cup of ceremonial matcha.</p>
+            
+            <form id="reservationForm" onsubmit="event.preventDefault(); handleReservation();">
+              <div class="form-group">
+                <label for="guestName">Your Name</label>
+                <input type="text" id="guestName" required placeholder="e.g. Maya Lin">
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="visitDate">Preferred Date</label>
+                  <input type="date" id="visitDate" required>
+                </div>
+                <div class="form-group">
+                  <label for="guestCount">Guests</label>
+                  <select id="guestCount">
+                    <option value="1">Solo Reader (1)</option>
+                    <option value="2">Pair (2)</option>
+                    <option value="3">Reading Circle (3-4)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="teaChoice">Welcome Tea Preference</label>
+                <select id="teaChoice">
+                  <option value="Ceremonial Matcha">Ceremonial Uji Matcha</option>
+                  <option value="Smoked Lapsang">Lapsang Souchong (Smoky & Peaty)</option>
+                  <option value="Jasmine White Peony">Jasmine White Peony (Floral & Sweet)</option>
+                  <option value="Cardamom Hojicha">Roasted Cardamom Hojicha (Warm & Nutty)</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Confirm Reservation 🍵</button>
+            </form>
+
+            <!-- Interactive Confirmation Alert -->
+            <div class="reservation-alert" id="reservationAlert"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo-mark">🍵</span>
+        <span class="logo-text">Matcha <em>&</em> Muse</span>
+        <p>A quiet ode to slow tea and deep reading.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#concept">Philosophy</a>
+        <a href="#pairings">Curated Menu</a>
+        <a href="#generator">Pairing Engine</a>
+        <a href="#parlor">Hours & Location</a>
+      </div>
+      <p class="footer-copyright">
+        © 2026 Matcha & Muse Parlor. Designed with mindfulness.
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
